@@ -11,7 +11,7 @@ setuptools.setup(
     description="This package allows to pass config file or strings to a python program",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/UL-SnT-Serval/python-config-parser",
     project_urls={
         "Bug Tracker": "https://github.com/pypa/sampleproject/issues",
     },
