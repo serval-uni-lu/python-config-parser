@@ -1,18 +1,11 @@
 import argparse
 import hashlib
 import json
+
 import yaml
-from mergedeep import merge, Strategy
-import re
-from config_parser.parser import InlineJsonParser, ConfigFileParser, StrParser
+from mergedeep import Strategy, merge
 
-
-def value_parser(value):
-    SPECIAL_KEY = "SPECIAL_KEY"
-    if re.match("^[-+]?[0-9]*\\.?[0-9]+(e[-+]?[0-9]+)?$", value) is None:
-        return str(value)
-    else:
-        return yaml.safe_load(f"{SPECIAL_KEY}: {value}")[SPECIAL_KEY]
+from config_parser.parser import ConfigFileParser, InlineJsonParser, StrParser
 
 
 def merge_parameters(a, b):

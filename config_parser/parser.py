@@ -1,8 +1,18 @@
 import abc
+import json
 import os
+import re
 from json import JSONDecodeError
 
-from config_parser.utils import *
+import yaml
+
+
+def value_parser(value):
+    SPECIAL_KEY = "SPECIAL_KEY"
+    if re.match("^[-+]?[0-9]*\\.?[0-9]+(e[-+]?[0-9]+)?$", value) is None:
+        return str(value)
+    else:
+        return yaml.safe_load(f"{SPECIAL_KEY}: {value}")[SPECIAL_KEY]
 
 
 class Parser(abc.ABC, metaclass=abc.ABCMeta):
@@ -40,7 +50,9 @@ class StrParser(Parser):
         if next_key is None:
             dictionary = {current_key: value}
         else:
-            dictionary = {current_key: StrParser.key_value_to_dict(next_key, value)}
+            dictionary = {
+                current_key: StrParser.key_value_to_dict(next_key, value)
+            }
         return dictionary
 
     def _do(self, parameter_value: str) -> dict:
@@ -56,5 +68,3 @@ class InlineJsonParser(Parser):
         except JSONDecodeError as e:
             print(e)
             return None
-
-
