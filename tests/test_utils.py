@@ -11,6 +11,6 @@ def test_get_dict_hash_order():
     assert get_dict_hash({"a": 1, "b": 2}) == get_dict_hash({"b": 2, "a": 1})
 
 
-def test_getConfig():
+def test_get_config():
     _ = get_config()
     assert True
