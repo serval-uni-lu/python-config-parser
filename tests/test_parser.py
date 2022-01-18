@@ -1,6 +1,6 @@
 import pytest
 
-from config_parser.parser import InlineJsonParser, StrParser, ConfigFileParser
+from config_parser.parser import ConfigFileParser, InlineJsonParser, StrParser
 
 
 @pytest.mark.parametrize(
@@ -20,8 +20,8 @@ def test_str_parser(str_input, dic_out):
 @pytest.mark.parametrize(
     "inline_input, dic_out",
     [
-        ("{" + f'"key1":3,"key2":3' + "}", {"key1": 3, "key2": 3}),
-        ("{" + f'"key1":,"key2":3' + "}", None),
+        ("{" + '"key1":3,"key2":3' + "}", {"key1": 3, "key2": 3}),
+        ("{" + '"key1":,"key2":3' + "}", None),
     ],
 )
 def test_inline_parser(inline_input, dic_out):
