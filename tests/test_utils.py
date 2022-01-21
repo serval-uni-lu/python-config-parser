@@ -1,6 +1,6 @@
 import pytest
 
-from config_utils.utils import get_config, get_dict_hash, merge_parameters
+from configutils.utils import get_config, get_dict_hash, merge_parameters
 
 
 def test_get_dict_hash_sample():

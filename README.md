@@ -32,8 +32,8 @@ pip install -U serval-config-utils
 
 In the python main file, use:
 ```
-import config_utils
-config = config_utils.get_config()
+import configutils
+config = configutils.get_config()
 ```
 
 Call the main file with parameters
@@ -63,5 +63,5 @@ git clone https://github.com/serval-uni-lu/python-config-parser
 <!-- ### Test
 After installation, you can launch the test suite from outside the source directory (you will need to have pytest >= 5.0.1 installed):
 ```
-pytest config_utils
+pytest configutils
 ``` -->

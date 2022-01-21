@@ -1,4 +1,4 @@
-from config_utils import get_config
+from configutils import get_config
 
 
 def main():
