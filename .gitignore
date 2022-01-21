@@ -34,6 +34,7 @@ coverage.xml
 # IDE
 .vscode/*
 .python-version
+.idea/*
 
 # Poetry
 poetry.lock
