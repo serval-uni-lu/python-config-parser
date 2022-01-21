@@ -5,7 +5,7 @@ import json
 import yaml
 from mergedeep import Strategy, merge
 
-from config_parser.parser import ConfigFileParser, InlineJsonParser, StrParser
+from config_utils.parser import ConfigFileParser, InlineJsonParser, StrParser
 
 
 def merge_parameters(a, b):

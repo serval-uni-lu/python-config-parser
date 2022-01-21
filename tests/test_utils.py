@@ -1,4 +1,6 @@
-from config_parser.utils import get_config, get_dict_hash
+import pytest
+
+from config_utils.utils import get_config, get_dict_hash, merge_parameters
 
 
 def test_get_dict_hash_sample():
@@ -14,3 +16,13 @@ def test_get_dict_hash_order():
 def test_get_config():
     _ = get_config()
     assert True
+
+
+@pytest.mark.parametrize(
+    "dict_a,dict_b,dict_out",
+    [
+        ({"a": 1, "b": 2}, {"b": 3}, {"a": 1, "b": 3}),
+    ],
+)
+def test_merge_parameters(dict_a, dict_b, dict_out):
+    assert dict_out == merge_parameters(dict_a, dict_b)

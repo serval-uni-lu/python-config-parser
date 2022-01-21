@@ -8,11 +8,11 @@ import yaml
 
 
 def value_parser(value):
-    SPECIAL_KEY = "SPECIAL_KEY"
+    special_key = "SPECIAL_KEY"
     if re.match("^[-+]?[0-9]*\\.?[0-9]+(e[-+]?[0-9]+)?$", value) is None:
         return str(value)
     else:
-        return yaml.safe_load(f"{SPECIAL_KEY}: {value}")[SPECIAL_KEY]
+        return yaml.safe_load(f"{special_key}: {value}")[special_key]
 
 
 class Parser(abc.ABC, metaclass=abc.ABCMeta):

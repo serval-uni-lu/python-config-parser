@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "config_parser"
+name = "config_utils"
 version = "0.1.0"
 description = ""
 authors = ["Thibault Simonetto <thibault.simonetto@uni.lu>"]
