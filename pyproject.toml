@@ -1,9 +1,13 @@
 [tool.poetry]
-name = "configutils"
+name = "serval-config-utils"
+packages = [
+    {include = "configutils"}
+]
 version = "0.1.0"
-description = ""
+description = "SerVal-Config-Utils automatically parse configurations from multiple sources into a single python dictionary."
 authors = ["Thibault Simonetto <thibault.simonetto@uni.lu>"]
 license = "MIT"
+readme="README.md"
 
 [tool.poetry.dependencies]
 python = "^3.6.2"
