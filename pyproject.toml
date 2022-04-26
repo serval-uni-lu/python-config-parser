@@ -3,7 +3,7 @@ name = "serval-config-utils"
 packages = [
     {include = "configutils"}
 ]
-version = "0.1.3"
+version = "0.1.4"
 description = "SerVal-Config-Utils automatically parse configurations from multiple sources into a single python dictionary."
 authors = ["Thibault Simonetto <thibault.simonetto@uni.lu>"]
 license = "MIT"
