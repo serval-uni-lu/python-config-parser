@@ -42,7 +42,7 @@ class ConfigFileParser(Parser):
 class StrParser(Parser):
     @staticmethod
     def key_value_to_dict(key, value):
-        if not value:
+        if value == '':
             return None
         splits = key.split(".", maxsplit=1)
         current_key = splits[0]

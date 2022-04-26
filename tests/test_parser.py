@@ -9,6 +9,7 @@ from configutils.parser import ConfigFileParser, InlineJsonParser, StrParser
         ("key1=abc", {"key1": "abc"}),
         ("key1.key2=3", {"key1": {"key2": 3}}),
         ("key1=", None),
+        ("key1=0", {"key1": 0}),
     ],
 )
 def test_str_parser(str_input, dic_out):
